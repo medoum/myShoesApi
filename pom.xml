@@ -50,6 +50,11 @@
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -58,9 +63,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <image>
-                        <builder>paketobuildpacks/builder-jammy-base:latest</builder>
-                    </image>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
@@ -69,6 +71,7 @@
                     </excludes>
                 </configuration>
             </plugin>
+            <plugin><groupId>org.apache.maven.plugins</groupId>  <artifactId>maven-resources-plugin</artifactId>    <version>3.1.0</version>            </plugin>
         </plugins>
     </build>
 
